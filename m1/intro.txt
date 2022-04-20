@@ -1,0 +1,6 @@
+WSL
+Event loop 
+
+NVM (nvm use)
+LTS long term support 
+nodemon
