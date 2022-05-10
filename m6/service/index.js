@@ -13,18 +13,16 @@ const getSingleTask = (taskId) => {
   } catch (e) {
     return null;
   }
-  return Task.findOne({ _id: objectIdTaskId }).lean();
+  return Task.findById(objectIdTaskId).lean();
 };
 
 const createTask = ({ text, title }) => Task.create({ title, text });
 
-const deleteTask = (taskId) => Task.deleteOne({ _id: taskId });
+const deleteTask = (taskId) => Task.findByIdAndRemove(taskId);
 
 const updateTask = (taskId, taskToUpdate) =>
-  Task.findOneAndUpdate(
-    {
-      _id: taskId,
-    },
+  Task.findByIdAndUpdate(
+    taskId,
     { $set: taskToUpdate },
     {
       // do we want the state of the document from before or after operation
