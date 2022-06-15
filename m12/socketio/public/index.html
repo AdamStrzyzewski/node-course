@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <script>
+      const socket = io.connect("/");
+      // connecting
+      // connect_failed
+      // connect
+      // message
+      // disconnect
+      // reconnecting
+      // reconnect
+      // error
+      // anything -> na dowolne zdarzenie
+      socket.on("message", (data) => {
+        alert(data);
+      });
+    </script>
+    test 3000
+  </body>
+</html>
